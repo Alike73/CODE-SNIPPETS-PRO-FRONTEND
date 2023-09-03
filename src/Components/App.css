@@ -1,8 +1,226 @@
 
+/* ---Sidebar-Toggle-Style--- */
+.hamburger {
+  position: fixed;
+  top: 1.5rem;
+  right:.5rem;
+  padding: 10px 10px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: var(--c-black-sm);
+  border: 0;
+  border-radius: .5em;
+  margin: 0;
+  overflow: visible;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  z-index: 300; 
+}
+.hamburger:hover {
+  opacity: 0.7; 
+}
+.hamburger.is-active:hover {
+  opacity: 0.7; 
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: var(--c-orange); 
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; 
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: 0px; 
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: var(--c-orange);
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block; 
+}
+.hamburger-inner::before {
+  top: -10px; 
+}
+.hamburger-inner::after {
+  bottom: -10px; 
+}
+
+.hamburger--arrowalt .hamburger-inner::before {
+  transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1); 
+}
+
+.hamburger--arrowalt .hamburger-inner::after {
+  transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1); 
+}
+
+.hamburger--arrowalt.is-active .hamburger-inner::before {
+  top: 0;
+  transform: translate3d(-8px, -10px, 0) rotate(-45deg) scale(0.7, 1);
+  transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); 
+}
+
+.hamburger--arrowalt.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: translate3d(-8px, 10px, 0) rotate(45deg) scale(0.7, 1);
+  transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); 
+}
+/* -------------------------- */
+
+.main_page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--c-main-bg);
+}
+
+.my_header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--c-header-bg);
+  box-shadow: var(--box-shadow-sm);
+  z-index: 150;
+}
+
+.logo_wrapper {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 2px solid var(--c-accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.header_logo {
+  display: block;
+  color: var(--c-accent);
+}
+
+.my_sidebar {
+  position: fixed;
+  top: 12rem;
+  left: 0;
+  width: 17.5rem;
+  height: calc(100vh - 6rem);
+  padding: 1rem 1rem 1rem;
+  background: var(--c-sidebar-bg);
+  translate: -17.5rem 0;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: var(--box-shadow-sm);
+  transition: all .4s ease-in-out;
+}
+.my_sidebar.open {
+  translate: 0;
+}
+
+.sidebar_header {
+  position: fixed;
+  top: 6rem;
+  left: 0;
+  width: 17.5rem;
+  height: 6rem;
+  translate: -17.5rem 0;
+  padding: 1rem;
+  background: var(--c-sidebar-bg);
+  z-index: 200;
+  transition: all .4s ease-in-out;
+}
+.sidebar_header.open {
+  translate: 0;
+}
+
+.title_1 {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  color: var(--c-white);
+}
+.title_1:hover {
+  color: var(--c-pink);
+  background: var(--c-header-bg);
+}
+
+.title_2 {
+  color: var(--c-label);
+}
+.title_2:hover {
+  color: var(--c-white);
+}
+.bi-asterisk {
+  opacity: 0;
+  color: var(--c-white);
+  transition: opacity .2s ease-in-out;
+}
+.title_2:hover .bi-asterisk {
+  opacity: 1;
+}
+
+.title_3 {
+  color: var(--c-yellow);
+}
 
 
+/* -------------------- */
 
+@media (min-width: 1920px) {
+  .hamburger {
+    display: none;
+  }
 
+  .my_sidebar,
+  .sidebar_header {
+    translate: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hamburger {
+    display: block;
+  }
+
+  .my_sidebar,
+  .sidebar_header {
+    translate: -17.5rem 0;
+  }
+
+  .my_sidebar.open,
+  .sidebar_header.open {
+    translate: 0;
+  }
+}
 
 
 
