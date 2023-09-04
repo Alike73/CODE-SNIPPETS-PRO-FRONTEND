@@ -12,9 +12,16 @@ font-family: 'Poppins', sans-serif; */
   --c-primary: hsl(264, 94%, 60%);
   --c-accent: hsl(198, 87%, 58%);
   --c-green-sm: hsl(144, 46%, 61%);
+  --c-moon: hsl(198, 34%, 56%);
+  --c-blue-md: hsl(220, 74%, 33%);
+  --c-blue-sm: hsl(212, 100%, 83%);
+  --c-blue-xxl: hsl(232, 41%, 17%);
   --c-light: hsl(180, 13%, 95%);
   --c-white: hsl(219, 20%, 84%);
   --c-dark-sm: hsl(240, 1%, 23%);
+
+  --c-dark-md: hsl(220, 15%, 16%);
+  
   --c-text: hsl(254, 7%, 35%);
   --c-label: hsl(249, 6%, 58%);
   --c-disabled: hsl(252, 19%, 89%);
@@ -26,6 +33,9 @@ font-family: 'Poppins', sans-serif; */
   --c-black-sm: rgba(0, 0, 0, .6);
 
   --box-shadow-sm: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  --c-accordion-btn-icon: url('./Assets/chevronDown.svg');
+  --c-accordion-body-bg: hsl(221, 21%, 34%);
 }
 
 *, *::before, *::after {

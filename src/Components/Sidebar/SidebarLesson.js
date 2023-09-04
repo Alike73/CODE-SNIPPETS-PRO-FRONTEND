@@ -31,9 +31,7 @@ const SidebarLesson = ({
           className="btn d-inline-flex align-items-center collapsed title_1" 
           data-bs-toggle="collapse" 
           data-bs-target={ data_target_title } 
-          // aria-expanded="false"
           aria-expanded={ isCollapsed }
-          // onClick={ onClick }
           onClick={(item) => {
             onClick();
             handleModuleClick(item.target_module_collapse_id);

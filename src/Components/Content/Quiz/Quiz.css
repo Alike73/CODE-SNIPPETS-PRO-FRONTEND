@@ -1,0 +1,22 @@
+
+.accordion-button:not(.collapsed) {
+  color: var(--c-yellow);
+  background: var(--c-sidebar-bg);
+}
+
+.accordion-button {
+  color: var(--c-label);
+  background: var(--c-header-bg);
+}
+
+.accordion-button::after,
+.accordion-button:not(.collapsed)::after {
+  content: "";
+  background-image: var(--c-accordion-btn-icon);
+  background-repeat: no-repeat;
+}
+
+.accordion-body {
+  color: var(--c-white);
+  background: var(--c-accordion-body-bg);
+}

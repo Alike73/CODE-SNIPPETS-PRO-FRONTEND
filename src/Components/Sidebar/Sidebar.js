@@ -30,7 +30,6 @@ const Sidebar = () => {
   
   return (
     <div className={`flex-shrink-0 my_sidebar ${isOpen ? "open" : ""}`}>
-
       <ul className="list-unstyled ps-0 menu_bar">
         { sidebarItems.map((item) => <SidebarLesson 
           title = { item.title } 
